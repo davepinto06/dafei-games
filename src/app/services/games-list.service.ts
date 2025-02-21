@@ -1,0 +1,65 @@
+import { Injectable } from '@angular/core';
+import { Game } from './games.-list.types';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class GamesListService {
+  // Later we can call an API to get the data
+  private games: Game[] = [
+    {
+      id: 1,
+      title: 'The Legend of Zelda: Breath of the Wild',
+      imageUrl: 'https://images.dafei.es/breath-of-wild.webp',
+      rating: 4.9,
+      genre: 'Action-Adventure',
+      releaseYear: 2017,
+    },
+    {
+      id: 2,
+      title: 'Red Dead Redemption 2',
+      imageUrl: 'https://images.dafei.es/red-dead-2.avif',
+      rating: 4.8,
+      genre: 'Action-Adventure',
+      releaseYear: 2018,
+    },
+    {
+      id: 3,
+      title: 'The Witcher 3: Wild Hunt',
+      imageUrl: 'https://images.dafei.es/witcher.avif',
+      rating: 4.7,
+      genre: 'RPG',
+      releaseYear: 2015,
+    },
+    {
+      id: 4,
+      title: 'God of War',
+      imageUrl: 'https://images.dafei.es/god-of-war.avif',
+      rating: 4.8,
+      genre: 'Action-Adventure',
+      releaseYear: 2018,
+    },
+    {
+      id: 5,
+      title: 'Hades',
+      imageUrl: 'https://images.dafei.es/hades.avif',
+      rating: 4.7,
+      genre: 'Roguelike',
+      releaseYear: 2020,
+    },
+    {
+      id: 6,
+      title: 'Cyberpunk 2077',
+      imageUrl: 'https://images.dafei.es/cyberpunk.avif',
+      rating: 4.0,
+      genre: 'RPG',
+      releaseYear: 2020,
+    },
+  ];
+
+  getAllGames(): Game[] {
+    return this.games;
+  }
+
+  constructor() {}
+}
