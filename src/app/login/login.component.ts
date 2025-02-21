@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { LucideAngularModule, Gamepad2, User, KeyRound, Mail } from 'lucide-angular';
 import { AuthService } from '../services/auth.service';
 
@@ -25,22 +26,28 @@ export class LoginComponent {
   constructor(
     private authService: AuthService,
     private router: Router,
+    private snackBar: MatSnackBar,
   ) {}
   login(): void {
     if (this.authService.login(this.userEmail.value, this.userPass.value)) {
-      alert('login');
       this.router.navigate(['/games-list']);
     } else {
-      alert('error while logging');
+      this.snackBar.open('Error while logging in', 'Close', {
+        duration: 3000,
+      });
     }
   }
 
   register(): void {
     if (this.authService.register(this.userName.value, this.userEmail.value, this.userPass.value)) {
-      alert('user added');
+      this.snackBar.open('User added', 'Close', {
+        duration: 3000,
+      });
       this.isRegistered = true;
     } else {
-      alert('user already exixts');
+      this.snackBar.open('User already exists', 'Close', {
+        duration: 3000,
+      });
     }
   }
 }
