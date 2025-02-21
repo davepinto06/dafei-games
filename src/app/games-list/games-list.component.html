@@ -37,7 +37,7 @@
         <div class="grid w-full grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-4">
           @for (game of Games; track game.id) {
             <app-game-card
-              [imageUrl]="game.imageUrl"
+              [imageUrl]="game.imageUrl || 'no-image.svg'"
               [title]="game.title"
               [rating]="game.rating"
               [genre]="game.genre"
