@@ -3,7 +3,8 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { GamesListService } from '../services/games-list.service';
 import { GameCardComponent } from './game-card/game-card.component';
 import { Game } from '../services/games.-list.types';
-import { LucideAngularModule, Search } from 'lucide-angular';
+import { LucideAngularModule, Search, PlusCircle, LogOut } from 'lucide-angular';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-games-list',
@@ -14,11 +15,21 @@ import { LucideAngularModule, Search } from 'lucide-angular';
 export class GamesListComponent {
   searchGame = new FormControl('');
   Search = Search;
+  PlusCircle = PlusCircle;
+  LogOut = LogOut;
   Games: Game[] = [];
 
-  constructor(private gamesListService: GamesListService) {}
+  constructor(
+    private gamesListService: GamesListService,
+    private authService: AuthService,
+  ) {}
 
   ngOnInit(): void {
     this.Games = this.gamesListService.getAllGames();
+  }
+
+  logOut(): void {
+    this.authService.logout();
+    window.location.reload();
   }
 }

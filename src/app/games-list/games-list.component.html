@@ -18,6 +18,17 @@
             [formControl]="searchGame"
           />
         </div>
+        <div class="flex justify-between gap-2">
+          <button>
+            <lucide-angular
+              class="cursor-pointer text-gray-400"
+              [img]="PlusCircle"
+            ></lucide-angular>
+          </button>
+          <button (click)="logOut()" class="transition-transform duration-300 hover:scale-105">
+            <lucide-angular class="cursor-pointer text-red-400" [img]="LogOut"></lucide-angular>
+          </button>
+        </div>
       </div>
     </div>
     <div class="w-full">
