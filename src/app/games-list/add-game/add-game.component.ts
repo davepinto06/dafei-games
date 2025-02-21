@@ -3,6 +3,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialogRef } from '@angular/material/dialog';
 import { GamesListService } from '../../services/games-list.service';
+import { Game } from '../../services/games.-list.types';
 
 @Component({
   selector: 'app-add-game',
@@ -25,16 +26,16 @@ export class AddGameComponent {
   ) {}
 
   addGame(): void {
-    if (
-      this.gamesListService.addNewGame(
-        this.idInput.value,
-        this.titleInput.value,
-        this.imageInput.value,
-        this.ratingInput.value,
-        this.genreInput.value,
-        this.releaseInput.value,
-      )
-    ) {
+    const newGame: Game = {
+      id: this.idInput.value,
+      title: this.titleInput.value,
+      imageUrl: this.imageInput.value,
+      rating: this.ratingInput.value,
+      genre: this.genreInput.value,
+      releaseYear: this.releaseInput.value,
+    };
+
+    if (this.gamesListService.addNewGame(newGame)) {
       this.dialogRef.close();
       this.snackBar.open('Game added succesfully', 'Close', {
         duration: 3000,

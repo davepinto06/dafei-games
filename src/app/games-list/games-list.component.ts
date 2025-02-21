@@ -36,6 +36,11 @@ export class GamesListComponent {
     window.location.reload();
   }
 
+  onSearchGame(): void {
+    console.log('search');
+    this.Games = this.gamesListService.getFilteredGames(this.searchGame.value);
+  }
+
   onAddGame(): void {
     this.dialog.open(AddGameComponent);
   }

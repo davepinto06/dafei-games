@@ -75,28 +75,14 @@ export class GamesListService {
     return this.games;
   }
 
-  addNewGame(
-    id: number,
-    title: string,
-    imageUrl: string,
-    rating: number,
-    genre: string,
-    releaseYear: number,
-  ): boolean {
-    let newGame: Game = {
-      id: id,
-      title: title,
-      imageUrl: imageUrl,
-      rating: rating,
-      genre: genre,
-      releaseYear: releaseYear,
-    };
+  addNewGame(newGame: Game): boolean {
+    this.games.push(newGame);
+    this.saveGames();
+    return true;
+  }
 
-    if (newGame) {
-      this.games.push(newGame);
-      this.saveGames();
-      return true;
-    }
-    return false;
+  getFilteredGames(filter: string | null): Game[] {
+    if (!filter) return this.games;
+    return this.games.filter((game) => game.title.toLowerCase().includes(filter.toLowerCase()));
   }
 }
