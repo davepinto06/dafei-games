@@ -57,9 +57,46 @@ export class GamesListService {
     },
   ];
 
+  constructor() {
+    this.loadGames();
+  }
+  private saveGames(): void {
+    localStorage.setItem('games', JSON.stringify(this.games));
+  }
+
+  private loadGames(): void {
+    const savedGames = localStorage.getItem('games');
+    if (savedGames) {
+      this.games = JSON.parse(savedGames);
+    }
+  }
+
   getAllGames(): Game[] {
     return this.games;
   }
 
-  constructor() {}
+  addNewGame(
+    id: number,
+    title: string,
+    imageUrl: string,
+    rating: number,
+    genre: string,
+    releaseYear: number,
+  ): boolean {
+    let newGame: Game = {
+      id: id,
+      title: title,
+      imageUrl: imageUrl,
+      rating: rating,
+      genre: genre,
+      releaseYear: releaseYear,
+    };
+
+    if (newGame) {
+      this.games.push(newGame);
+      this.saveGames();
+      return true;
+    }
+    return false;
+  }
 }
