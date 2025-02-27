@@ -44,4 +44,25 @@ export class GamesListComponent {
   onAddGame(): void {
     this.dialog.open(AddGameComponent);
   }
+
+  formatLargeNumbers(value: number): string {
+    const numberUnit = { thousandUnit: 'K', millionUnit: 'M', billionUnit: 'B' };
+
+    if (value < 1) return '0';
+
+    if (value < 1000) return `+${value}`;
+
+    if (value < 1000000) {
+      const thousands = (value / 1000).toFixed(1).replace(/\.0$/, '');
+      return `+${thousands}${numberUnit.thousandUnit}`;
+    }
+
+    if (value < 1000000000) {
+      const millions = (value / 1000000).toFixed(1).replace(/\.0$/, '');
+      return `+${millions}${numberUnit.millionUnit}`;
+    }
+
+    const billions = (value / 1000000000).toFixed(1).replace(/\.0$/, '');
+    return `+${billions}${numberUnit.billionUnit}`;
+  }
 }

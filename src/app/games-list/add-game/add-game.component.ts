@@ -33,6 +33,9 @@ export class AddGameComponent {
       rating: this.ratingInput.value,
       genre: this.genreInput.value,
       releaseYear: this.releaseInput.value,
+      downloads: 1,
+      playersOnline: 2,
+      //TODO
     };
 
     if (this.gamesListService.addNewGame(newGame)) {

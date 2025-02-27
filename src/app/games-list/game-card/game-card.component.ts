@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { LucideAngularModule, Star } from 'lucide-angular';
+import { LucideAngularModule, Star, Download, Users } from 'lucide-angular';
 
 @Component({
   selector: 'app-game-card',
@@ -13,5 +13,10 @@ export class GameCardComponent {
   @Input() rating!: number;
   @Input() genre!: string;
   @Input() releaseYear!: number;
+  @Input() downloads!: string;
+  @Input() playersOnline!: string;
+
   Star = Star;
+  Download = Download;
+  Users = Users;
 }

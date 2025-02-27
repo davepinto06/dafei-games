@@ -5,4 +5,6 @@ export type Game = {
   rating: number;
   genre: string;
   releaseYear: number;
+  downloads: number;
+  playersOnline: number;
 };

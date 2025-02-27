@@ -14,6 +14,8 @@ export class GamesListService {
       rating: 4.9,
       genre: 'Action-Adventure',
       releaseYear: 2017,
+      downloads: 2356000,
+      playersOnline: 38900,
     },
     {
       id: 2,
@@ -22,6 +24,8 @@ export class GamesListService {
       rating: 4.8,
       genre: 'Action-Adventure',
       releaseYear: 2018,
+      downloads: 33506,
+      playersOnline: 5809,
     },
     {
       id: 3,
@@ -30,6 +34,8 @@ export class GamesListService {
       rating: 4.7,
       genre: 'RPG',
       releaseYear: 2015,
+      downloads: 1356000,
+      playersOnline: 235002,
     },
     {
       id: 4,
@@ -38,6 +44,8 @@ export class GamesListService {
       rating: 4.8,
       genre: 'Action-Adventure',
       releaseYear: 2018,
+      downloads: 156000078,
+      playersOnline: 12082054,
     },
     {
       id: 5,
@@ -46,6 +54,8 @@ export class GamesListService {
       rating: 4.7,
       genre: 'Roguelike',
       releaseYear: 2020,
+      downloads: 852,
+      playersOnline: 92,
     },
     {
       id: 6,
@@ -54,6 +64,8 @@ export class GamesListService {
       rating: 4.0,
       genre: 'RPG',
       releaseYear: 2020,
+      downloads: 83920,
+      playersOnline: 31970,
     },
   ];
 

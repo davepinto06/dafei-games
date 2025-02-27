@@ -42,6 +42,8 @@
               [rating]="game.rating"
               [genre]="game.genre"
               [releaseYear]="game.releaseYear"
+              [downloads]="formatLargeNumbers(game.downloads)"
+              [playersOnline]="formatLargeNumbers(game.playersOnline)"
             ></app-game-card>
           }
         </div>
