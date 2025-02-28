@@ -10,8 +10,8 @@
   </div>
 
   <div class="mt-2 flex flex-col items-start justify-end gap-2 p-2">
-    <div class="flex gap-2">
-      <lucide-angular class="text-amber-300" [img]="Star"></lucide-angular>
+    <div class="flex">
+      <lucide-angular class="mr-1 h-5 w-5 text-amber-300" [img]="Star"></lucide-angular>
       <span class="text-sm sm:text-base">
         {{ rating }}
       </span>
@@ -21,13 +21,13 @@
       <div class="flex justify-between">
         <span>{{ genre }}</span>
         <div class="flex">
-          <lucide-angular class="mr-1 h-4 w-4" [img]="Download"></lucide-angular>
+          <lucide-angular class="mr-1 h-4 w-4 text-green-300" [img]="Download"></lucide-angular>
           <span>{{ downloads }}</span>
         </div>
       </div>
       <span>{{ releaseYear }}</span>
       <div class="flex">
-        <lucide-angular class="mr-1 h-4 w-4" [img]="Users"></lucide-angular>
+        <lucide-angular class="mr-1 h-4 w-4 text-red-400" [img]="Users"></lucide-angular>
         <span>{{ playersOnline }}</span>
       </div>
     </div>
